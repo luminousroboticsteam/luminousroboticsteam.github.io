@@ -12,14 +12,17 @@
     {
       "id": "ekim",
       "name": "Ekim 2026",
-      "note": "",
+      "note": "VEX V5 Override imza etkinlik dönemi (1 Ağustos 2026 – 28 Şubat 2027) devam ediyor.",
       "events": [
         { "day": "1", "dow": "Per", "cat": "kayit", "title": "1. etkinlik tercih dönemi kapanışı", "desc": "", "time": "" },
         { "day": "2", "dow": "Cum", "cat": "kayit", "title": "Geç kayıt başvuruları açılış", "desc": "", "time": "" },
+        { "day": "4–10", "dow": "Uzay Haftası", "cat": "ozel", "title": "Dünya Uzay Haftası", "desc": "Sosyal medya paylaşımı için uygun — Sputnik'in fırlatılışı (4 Ekim) ile Dış Uzay Antlaşması'nın (10 Ekim) yıldönümü arası.", "time": "" },
+        { "day": "13", "dow": "Sal", "cat": "ozel", "title": "Ada Lovelace Günü", "desc": "Bilim ve teknolojide kadınları öne çıkaran uluslararası gün — post fikri.", "time": "" },
         { "day": "15", "dow": "Per", "cat": "kayit", "title": "2. etkinlik tercih dönemi başlangıcı", "desc": "", "time": "" },
         { "day": "22", "dow": "Per", "cat": "kayit", "title": "2. etkinlik tercih dönemi kapanışı", "desc": "", "time": "" },
         { "day": "23", "dow": "Cum", "cat": "kayit", "title": "2. geç kayıt başvuruları açılış", "desc": "", "time": "" },
         { "day": "29", "dow": "Per", "cat": "odul", "title": "Impact, Leadership & Woodie Flowers başvuruları açılış", "desc": "Serbest Bölgesel (Unrestricted Regional) kayıtları da aynı gün açılıyor.", "time": "" },
+        { "day": "29", "dow": "Per", "cat": "tatil", "title": "Cumhuriyet Bayramı", "desc": "Resmi tatil.", "time": "" },
         { "day": "30", "dow": "Cum", "cat": "yarisma", "title": "Gönüllü başvuruları başlangıcı", "desc": "", "time": "" }
       ]
     },
@@ -29,6 +32,7 @@
       "note": "",
       "events": [
         { "day": "5", "dow": "Per", "cat": "kayit", "title": "Ek (bölgeler arası) etkinlik kayıt açılışı", "desc": "", "time": "" },
+        { "day": "8", "dow": "Paz", "cat": "ozel", "title": "Ulusal STEM Günü", "desc": "Post fikri — STEM kit programından örnekler paylaşılabilir.", "time": "" },
         { "day": "12", "dow": "Per", "cat": "kit", "title": "Kickoff öncesi sanal kit paylaşımı", "desc": "", "time": "" },
         { "day": "17", "dow": "Sal", "cat": "kayit", "title": "Kit & Kickoff kayıtları kapanış", "desc": "Tüm etkinlik kayıtları da bugün kapanıyor.", "time": "12:00 kayıt kapanışı · 17:00 ilk etkinlik ödemesi son tarih" }
       ]
@@ -36,9 +40,10 @@
     {
       "id": "aralik",
       "name": "Aralık 2026",
-      "note": "Sakin ay — büyük bir son tarih yok.",
+      "note": "",
       "events": [
-        { "day": "1", "dow": "Sal", "cat": "kit", "title": "FIRST MySite sistem yenilemesi", "desc": "İdari/teknik bir tarih, takım için aksiyon gerektirmiyor.", "time": "" }
+        { "day": "1", "dow": "Sal", "cat": "kit", "title": "FIRST MySite sistem yenilemesi", "desc": "İdari/teknik bir tarih, takım için aksiyon gerektirmiyor.", "time": "" },
+        { "day": "7–13", "dow": "Bilişim Haftası", "cat": "ozel", "title": "Bilgisayar Bilimleri Eğitim Haftası (Hour of Code)", "desc": "9 Aralık, Grace Hopper'ın doğum günü ile aynı haftaya denk gelir — kodlama/STEM içerikleri için iyi bir post dönemi.", "time": "" }
       ]
     },
     {
@@ -61,7 +66,9 @@
       "events": [
         { "day": "4", "dow": "Per", "cat": "odul", "title": "Dean's List, Woodie Flowers & Leadership başvuruları kapanış", "desc": "", "time": "15:00" },
         { "day": "11", "dow": "Per", "cat": "odul", "title": "FIRST Impact Award başvurusu kapanış", "desc": "Impact videosu dahil başvuru materyallerinin son teslim tarihi.", "time": "15:00" },
-        { "day": "20", "dow": "Cmt", "cat": "yarisma", "milestone": true, "title": "Week Zero", "desc": "Robotun ilk kez rakipsiz test edildiği açılış haftası.", "time": "" }
+        { "day": "11", "dow": "Per", "cat": "ozel", "title": "Uluslararası Kadın ve Kızlar için Bilim Günü", "desc": "Impact başvuru tarihiyle aynı güne denk geliyor — ikisini birlikte içerik yapmak için fırsat.", "time": "" },
+        { "day": "20", "dow": "Cmt", "cat": "yarisma", "milestone": true, "title": "Week Zero", "desc": "Robotun ilk kez rakipsiz test edildiği açılış haftası.", "time": "" },
+        { "day": "28", "dow": "Paz", "cat": "yarisma", "title": "VEX V5 Override imza etkinlik dönemi kapanışı", "desc": "1 Ağustos 2026'dan beri süren dönem sona eriyor; bölgesel/ulusal şampiyona planlaması bu tarihe göre yapılmalı.", "time": "" }
       ]
     },
     {
@@ -70,7 +77,9 @@
       "note": "Yarışma sezonu başlıyor.",
       "events": [
         { "day": "3–7", "dow": "Hafta 1", "cat": "yarisma", "milestone": true, "title": "1. Hafta yarışmaları", "desc": "", "time": "" },
+        { "day": "9–11", "dow": "Bayram", "cat": "tatil", "title": "Ramazan Bayramı", "desc": "Resmi tatil — 2. Hafta yarışmalarının başlangıcıyla (10 Mart) çakışıyor, planlamada dikkat.", "time": "" },
         { "day": "10–14", "dow": "Hafta 2", "cat": "yarisma", "milestone": true, "title": "2. Hafta yarışmaları", "desc": "", "time": "" },
+        { "day": "14", "dow": "Paz", "cat": "ozel", "title": "Pi Günü", "desc": "Aynı zamanda Einstein'ın doğum günü — matematik/mühendislik temalı post için iyi bir gün.", "time": "" },
         { "day": "17–21", "dow": "Hafta 3", "cat": "yarisma", "milestone": true, "title": "3. Hafta yarışmaları", "desc": "", "time": "" },
         { "day": "24–28", "dow": "Hafta 4", "cat": "yarisma", "milestone": true, "title": "4. Hafta yarışmaları", "desc": "", "time": "" }
       ]
@@ -81,9 +90,11 @@
       "note": "",
       "events": [
         { "day": "31–4", "dow": "Hafta 5", "cat": "yarisma", "milestone": true, "title": "5. Hafta yarışmaları", "desc": "31 Mart – 4 Nisan", "time": "" },
+        { "day": "3–11", "dow": "Robotik Haftası", "cat": "ozel", "title": "Ulusal Robotik Haftası", "desc": "6. Hafta yarışmalarıyla çakışıyor — takım tanıtım içerikleri için uygun.", "time": "" },
         { "day": "7–11", "dow": "Hafta 6", "cat": "yarisma", "milestone": true, "title": "6. Hafta yarışmaları", "desc": "", "time": "" },
         { "day": "14–18", "dow": "Hafta 7", "cat": "yarisma", "milestone": true, "title": "7. Hafta yarışmaları", "desc": "", "time": "" },
-        { "day": "21", "dow": "Çar", "cat": "kit", "title": "FIRST Choice ve Q&A kapanışı", "desc": "", "time": "12:00" }
+        { "day": "21", "dow": "Çar", "cat": "kit", "title": "FIRST Choice ve Q&A kapanışı", "desc": "", "time": "12:00" },
+        { "day": "23", "dow": "Cum", "cat": "tatil", "title": "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı", "desc": "Resmi tatil.", "time": "" }
       ]
     },
     {
@@ -91,7 +102,11 @@
       "name": "Mayıs 2027",
       "note": "",
       "events": [
-        { "day": "28–1", "dow": "Champs", "cat": "yarisma", "milestone": true, "title": "FIRST Championship — Houston, TX", "desc": "28 Nisan – 1 Mayıs. Sezonun final etkinliği.", "time": "" }
+        { "day": "1", "dow": "Cmt", "cat": "tatil", "title": "Emek ve Dayanışma Günü", "desc": "Resmi tatil.", "time": "" },
+        { "day": "28–1", "dow": "Champs", "cat": "yarisma", "milestone": true, "title": "FIRST Championship — Houston, TX", "desc": "28 Nisan – 1 Mayıs. Sezonun final etkinliği.", "time": "" },
+        { "day": "27–6", "dow": "VEX Worlds", "cat": "yarisma", "milestone": true, "title": "VEX Robotics Dünya Şampiyonası — St. Louis, ABD", "desc": "27 Nisan – 6 Mayıs, America's Center'da 10 günlük pencerede düzenleniyor; VRC (V5) bölümünün kesin günleri açıklandığında güncellenecek. FIRST Championship ile aynı döneme denk geliyor.", "time": "" },
+        { "day": "16–19", "dow": "Bayram", "cat": "tatil", "title": "Kurban Bayramı", "desc": "Resmi tatil.", "time": "" },
+        { "day": "19", "dow": "Çar", "cat": "tatil", "title": "19 Mayıs Atatürk'ü Anma, Gençlik ve Spor Bayramı", "desc": "Kurban Bayramı'nın son günüyle aynı tarihe denk geliyor.", "time": "" }
       ]
     }
   ]

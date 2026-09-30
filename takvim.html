@@ -19,6 +19,9 @@
   --cat-odul: #B8862B;
   --cat-kit: #6E7A93;
   --cat-yarisma: #2E8B57;
+  --cat-tatil: #C0392B;
+  --cat-ozel: #8E44AD;
+  --cat-gorev: #0F9B8E;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -26,6 +29,7 @@
     --bg: #10182B; --surface: #172038; --fg: #E9EEF7; --muted: #94A1BE; --border: #2A3654;
     --accent: #4FA8D6; --navy: #C6D5EE;
     --cat-kayit: #4FA8D6; --cat-odul: #D9A94C; --cat-kit: #8E9BB8; --cat-yarisma: #4CAE7B;
+    --cat-tatil: #E17055; --cat-ozel: #B983E0; --cat-gorev: #33C2B3;
     color-scheme: dark;
   }
 }
@@ -128,6 +132,9 @@ footer a { color: var(--accent); text-decoration: underline; }
     <div class="legend-item"><span class="legend-dot" style="background:var(--cat-odul)"></span>Ödül Başvurusu</div>
     <div class="legend-item"><span class="legend-dot" style="background:var(--cat-kit)"></span>Kit &amp; Teknik Sistemler</div>
     <div class="legend-item"><span class="legend-dot" style="background:var(--cat-yarisma)"></span>Yarışma &amp; Etkinlik</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--cat-tatil)"></span>Resmi &amp; Dini Bayram</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--cat-ozel)"></span>Özel Gün</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--cat-gorev)"></span>Takım Görevi</div>
   </div>
 
   <nav class="month-nav" id="monthNav"></nav>
@@ -144,7 +151,7 @@ footer a { color: var(--accent); text-decoration: underline; }
 </div>
 
 <script>
-const CAT_LABELS = { kayit: 'Kayıt & Ödeme', odul: 'Ödül Başvurusu', kit: 'Kit & Teknik Sistemler', yarisma: 'Yarışma & Etkinlik' };
+const CAT_LABELS = { kayit: 'Kayıt & Ödeme', odul: 'Ödül Başvurusu', kit: 'Kit & Teknik Sistemler', yarisma: 'Yarışma & Etkinlik', tatil: 'Resmi & Dini Bayram', ozel: 'Özel Gün', gorev: 'Takım Görevi' };
 
 function esc(s) {
   return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
