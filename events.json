@@ -1,0 +1,98 @@
+{
+  "repo": "luminousroboticsteam/luminousroboticsteam.github.io",
+  "months": [
+    {
+      "id": "eylul",
+      "name": "Eylül 2026",
+      "note": "",
+      "events": [
+        { "day": "24", "dow": "Per", "cat": "kayit", "title": "Kit & Kickoff kayıt başlangıcı", "desc": "1. etkinlik tercih dönemi de aynı gün açılıyor.", "time": "" }
+      ]
+    },
+    {
+      "id": "ekim",
+      "name": "Ekim 2026",
+      "note": "",
+      "events": [
+        { "day": "1", "dow": "Per", "cat": "kayit", "title": "1. etkinlik tercih dönemi kapanışı", "desc": "", "time": "" },
+        { "day": "2", "dow": "Cum", "cat": "kayit", "title": "Geç kayıt başvuruları açılış", "desc": "", "time": "" },
+        { "day": "15", "dow": "Per", "cat": "kayit", "title": "2. etkinlik tercih dönemi başlangıcı", "desc": "", "time": "" },
+        { "day": "22", "dow": "Per", "cat": "kayit", "title": "2. etkinlik tercih dönemi kapanışı", "desc": "", "time": "" },
+        { "day": "23", "dow": "Cum", "cat": "kayit", "title": "2. geç kayıt başvuruları açılış", "desc": "", "time": "" },
+        { "day": "29", "dow": "Per", "cat": "odul", "title": "Impact, Leadership & Woodie Flowers başvuruları açılış", "desc": "Serbest Bölgesel (Unrestricted Regional) kayıtları da aynı gün açılıyor.", "time": "" },
+        { "day": "30", "dow": "Cum", "cat": "yarisma", "title": "Gönüllü başvuruları başlangıcı", "desc": "", "time": "" }
+      ]
+    },
+    {
+      "id": "kasim",
+      "name": "Kasım 2026",
+      "note": "",
+      "events": [
+        { "day": "5", "dow": "Per", "cat": "kayit", "title": "Ek (bölgeler arası) etkinlik kayıt açılışı", "desc": "", "time": "" },
+        { "day": "12", "dow": "Per", "cat": "kit", "title": "Kickoff öncesi sanal kit paylaşımı", "desc": "", "time": "" },
+        { "day": "17", "dow": "Sal", "cat": "kayit", "title": "Kit & Kickoff kayıtları kapanış", "desc": "Tüm etkinlik kayıtları da bugün kapanıyor.", "time": "12:00 kayıt kapanışı · 17:00 ilk etkinlik ödemesi son tarih" }
+      ]
+    },
+    {
+      "id": "aralik",
+      "name": "Aralık 2026",
+      "note": "Sakin ay — büyük bir son tarih yok.",
+      "events": [
+        { "day": "1", "dow": "Sal", "cat": "kit", "title": "FIRST MySite sistem yenilemesi", "desc": "İdari/teknik bir tarih, takım için aksiyon gerektirmiyor.", "time": "" }
+      ]
+    },
+    {
+      "id": "ocak",
+      "name": "Ocak 2027",
+      "note": "",
+      "events": [
+        { "day": "9", "dow": "Cmt", "cat": "yarisma", "milestone": true, "title": "KICKOFF — BIOCORE™ presented by Haas", "desc": "Sezonun oyunu açıklanıyor. Kit parçaları değişim sistemi ve FIRST Choice öncelikli listesi de bugün başlıyor.", "time": "12:00–13:30" },
+        { "day": "13", "dow": "Çar", "cat": "kit", "title": "Resmi Soru-Cevap (Q&A) açılışı", "desc": "", "time": "" },
+        { "day": "16", "dow": "Cmt", "cat": "kit", "title": "Kit parçaları değişim sistemi kapanışı", "desc": "", "time": "" },
+        { "day": "18", "dow": "Pzt", "cat": "kit", "title": "FIRST Choice öncelikli listesi kapanışı", "desc": "", "time": "" },
+        { "day": "21", "dow": "Per", "cat": "kayit", "title": "Ek etkinlik ödemeleri son tarih", "desc": "", "time": "17:00" },
+        { "day": "29", "dow": "Cum", "cat": "kit", "title": "FIRST Choice sipariş sistemi açılış", "desc": "", "time": "" }
+      ]
+    },
+    {
+      "id": "subat",
+      "name": "Şubat 2027",
+      "note": "",
+      "events": [
+        { "day": "4", "dow": "Per", "cat": "odul", "title": "Dean's List, Woodie Flowers & Leadership başvuruları kapanış", "desc": "", "time": "15:00" },
+        { "day": "11", "dow": "Per", "cat": "odul", "title": "FIRST Impact Award başvurusu kapanış", "desc": "Impact videosu dahil başvuru materyallerinin son teslim tarihi.", "time": "15:00" },
+        { "day": "20", "dow": "Cmt", "cat": "yarisma", "milestone": true, "title": "Week Zero", "desc": "Robotun ilk kez rakipsiz test edildiği açılış haftası.", "time": "" }
+      ]
+    },
+    {
+      "id": "mart",
+      "name": "Mart 2027",
+      "note": "Yarışma sezonu başlıyor.",
+      "events": [
+        { "day": "3–7", "dow": "Hafta 1", "cat": "yarisma", "milestone": true, "title": "1. Hafta yarışmaları", "desc": "", "time": "" },
+        { "day": "10–14", "dow": "Hafta 2", "cat": "yarisma", "milestone": true, "title": "2. Hafta yarışmaları", "desc": "", "time": "" },
+        { "day": "17–21", "dow": "Hafta 3", "cat": "yarisma", "milestone": true, "title": "3. Hafta yarışmaları", "desc": "", "time": "" },
+        { "day": "24–28", "dow": "Hafta 4", "cat": "yarisma", "milestone": true, "title": "4. Hafta yarışmaları", "desc": "", "time": "" }
+      ]
+    },
+    {
+      "id": "nisan",
+      "name": "Nisan 2027",
+      "note": "",
+      "events": [
+        { "day": "31–4", "dow": "Hafta 5", "cat": "yarisma", "milestone": true, "title": "5. Hafta yarışmaları", "desc": "31 Mart – 4 Nisan", "time": "" },
+        { "day": "7–11", "dow": "Hafta 6", "cat": "yarisma", "milestone": true, "title": "6. Hafta yarışmaları", "desc": "", "time": "" },
+        { "day": "14–18", "dow": "Hafta 7", "cat": "yarisma", "milestone": true, "title": "7. Hafta yarışmaları", "desc": "", "time": "" },
+        { "day": "21", "dow": "Çar", "cat": "kit", "title": "FIRST Choice ve Q&A kapanışı", "desc": "", "time": "12:00" }
+      ]
+    },
+    {
+      "id": "mayis",
+      "name": "Mayıs 2027",
+      "note": "",
+      "events": [
+        { "day": "28–1", "dow": "Champs", "cat": "yarisma", "milestone": true, "title": "FIRST Championship — Houston, TX", "desc": "28 Nisan – 1 Mayıs. Sezonun final etkinliği.", "time": "" }
+      ]
+    }
+  ]
+}

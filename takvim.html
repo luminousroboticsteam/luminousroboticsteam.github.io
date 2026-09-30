@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luminous Sezon Takvimi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F6F8FB;
+  --surface: #FFFFFF;
+  --fg: #1B2740;
+  --muted: #64708A;
+  --border: #E3E8F0;
+  --accent: #1C7FB0;
+  --navy: #1B2E4F;
+  --cat-kayit: #1C7FB0;
+  --cat-odul: #B8862B;
+  --cat-kit: #6E7A93;
+  --cat-yarisma: #2E8B57;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10182B; --surface: #172038; --fg: #E9EEF7; --muted: #94A1BE; --border: #2A3654;
+    --accent: #4FA8D6; --navy: #C6D5EE;
+    --cat-kayit: #4FA8D6; --cat-odul: #D9A94C; --cat-kit: #8E9BB8; --cat-yarisma: #4CAE7B;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Work Sans', Arial, sans-serif;
+  padding-inline: 16px;
+}
+img { max-width: 100%; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+a { color: inherit; }
+button { font: inherit; }
+
+.wrap { max-width: 760px; margin: 0 auto; }
+
+.page-header { padding-block: 28px 6px; display: flex; flex-direction: column; gap: 6px; }
+.kicker { font-weight: 800; font-size: 12.5px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+.title { font-family: 'Anton', Arial, sans-serif; font-weight: 400; font-size: clamp(28px, 6vw, 42px); color: var(--navy); line-height: 1.05; }
+.subtitle { font-size: 14px; color: var(--muted); line-height: 1.5; max-width: 60ch; }
+
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-block: 14px 6px; }
+.add-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--accent); color: #fff; border: none; border-radius: 999px;
+  padding: 10px 18px; font-weight: 700; font-size: 13.5px; cursor: pointer;
+  text-decoration: none;
+}
+.add-btn:hover { filter: brightness(1.08); }
+.add-hint { font-size: 12px; color: var(--muted); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 14px; padding-block: 10px 18px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+.month-nav {
+  position: sticky; top: 0; z-index: 10; background: var(--bg);
+  padding-block: 10px; margin-inline: -16px; padding-inline: 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+}
+.month-nav::-webkit-scrollbar { display: none; }
+.month-pill {
+  flex-shrink: 0; font-size: 13px; font-weight: 700; padding: 7px 14px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--fg);
+  text-decoration: none; white-space: nowrap;
+}
+.month-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+.month { padding-block: 34px 10px; scroll-margin-top: 60px; border-bottom: 1px solid var(--border); }
+.month:last-of-type { border-bottom: none; }
+.month-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; }
+.month-name { font-family: 'Anton', Arial, sans-serif; font-weight: 400; font-size: 26px; color: var(--navy); }
+.month-note { font-size: 12.5px; color: var(--muted); }
+
+.events { display: flex; flex-direction: column; gap: 2px; }
+.event { display: grid; grid-template-columns: 64px 1fr; gap: 14px; padding-block: 11px; border-top: 1px solid var(--border); }
+.event:first-child { border-top: none; }
+.date-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; line-height: 1.1; }
+.date-num { font-family: 'Anton', Arial, sans-serif; font-size: 20px; color: var(--fg); font-variant-numeric: tabular-nums; }
+.date-dow { font-size: 10px; font-weight: 700; letter-spacing: 0.4px; color: var(--muted); text-transform: uppercase; }
+.event-body { display: flex; flex-direction: column; gap: 3px; padding-inline-start: 12px; border-left: 3px solid var(--cat); min-width: 0; }
+.event-title { font-weight: 700; font-size: 14.5px; color: var(--fg); }
+.event-desc { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
+.event-time { font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.milestone .event-body { border-left-width: 4px; }
+.milestone .date-num { font-size: 23px; }
+.milestone .event-title { font-size: 16px; }
+
+.empty-state { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14px; }
+
+footer { padding-block: 28px 40px; font-size: 11.5px; color: var(--muted); line-height: 1.6; }
+footer a { color: var(--accent); text-decoration: underline; }
+
+@media (max-width: 420px) {
+  .event { grid-template-columns: 52px 1fr; gap: 10px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;">&larr; Ana Sayfa</a>
+
+  <header class="page-header">
+    <div class="kicker">Luminous Robotics Team &middot; Takım 9233</div>
+    <h1 class="title">2026&ndash;27 Sezon Takvimi</h1>
+    <div class="subtitle">Kayıt, ödül başvurusu, kit ve yarışma tarihleri &mdash; FIRST Robotics Competition BIOCORE&trade; sezonu.</div>
+  </header>
+
+  <div class="toolbar">
+    <a class="add-btn" id="addBtn" href="#" target="_blank" rel="noopener">+ Etkinlik ekle</a>
+    <span class="add-hint">GitHub&rsquo;da events.json dosyasını açar, oraya bir satır eklemen yeterli.</span>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot" style="background:var(--cat-kayit)"></span>Kayıt &amp; Ödeme</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--cat-odul)"></span>Ödül Başvurusu</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--cat-kit)"></span>Kit &amp; Teknik Sistemler</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--cat-yarisma)"></span>Yarışma &amp; Etkinlik</div>
+  </div>
+
+  <nav class="month-nav" id="monthNav"></nav>
+
+  <main id="months">
+    <div class="empty-state">Takvim yükleniyor&hellip;</div>
+  </main>
+
+  <footer>
+    Bu sayfa <code>events.json</code> dosyasından besleniyor. Yeni bir etkinlik eklemek veya bir tarihi düzeltmek için o dosyayı GitHub&rsquo;da düzenlemen yeterli &mdash; sayfa bir sonraki açılışta otomatik güncellenir.<br>
+    Kaynak: <a href="https://www.firstinspires.org/programs/calendar" target="_blank" rel="noopener">firstinspires.org/programs/calendar</a>
+  </footer>
+
+</div>
+
+<script>
+const CAT_LABELS = { kayit: 'Kayıt & Ödeme', odul: 'Ödül Başvurusu', kit: 'Kit & Teknik Sistemler', yarisma: 'Yarışma & Etkinlik' };
+
+function esc(s) {
+  return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function renderEvent(ev) {
+  const cls = 'event' + (ev.milestone ? ' milestone' : '');
+  const cat = ev.cat || 'kit';
+  return `
+    <div class="${cls}" style="--cat:var(--cat-${esc(cat)})">
+      <div class="date-badge"><div class="date-num">${esc(ev.day)}</div><div class="date-dow">${esc(ev.dow)}</div></div>
+      <div class="event-body">
+        <div class="event-title">${esc(ev.title)}</div>
+        ${ev.desc ? `<div class="event-desc">${esc(ev.desc)}</div>` : ''}
+        ${ev.time ? `<div class="event-time">${esc(ev.time)}</div>` : ''}
+      </div>
+    </div>`;
+}
+
+function renderMonth(m) {
+  return `
+    <section class="month" id="${esc(m.id)}">
+      <div class="month-head">
+        <div class="month-name">${esc(m.name)}</div>
+        ${m.note ? `<div class="month-note">${esc(m.note)}</div>` : ''}
+      </div>
+      <div class="events">
+        ${m.events.length ? m.events.map(renderEvent).join('') : '<div class="empty-state">Bu ay için henüz etkinlik yok.</div>'}
+      </div>
+    </section>`;
+}
+
+async function init() {
+  const monthsEl = document.getElementById('months');
+  const navEl = document.getElementById('monthNav');
+  const addBtn = document.getElementById('addBtn');
+  try {
+    const res = await fetch('events.json', { cache: 'no-store' });
+    const data = await res.json();
+
+    navEl.innerHTML = data.months.map(m =>
+      `<a class="month-pill" href="#${esc(m.id)}">${esc(m.name.split(' ')[0])}</a>`
+    ).join('');
+
+    monthsEl.innerHTML = data.months.map(renderMonth).join('');
+
+    if (data.repo && data.repo.indexOf('/') > -1 && !data.repo.startsWith('KULLANICIADI')) {
+      addBtn.href = `https://github.com/${data.repo}/edit/main/events.json`;
+    } else {
+      addBtn.href = '#';
+      addBtn.title = 'events.json içindeki "repo" alanını kendi GitHub kullanıcı adın/deponla değiştir.';
+    }
+  } catch (e) {
+    monthsEl.innerHTML = '<div class="empty-state">Takvim verisi yüklenemedi. events.json dosyasının bu sayfayla aynı klasörde olduğundan emin ol.</div>';
+  }
+}
+init();
+</script>
+</body>
+</html>

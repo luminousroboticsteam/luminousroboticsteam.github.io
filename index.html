@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luminous Robotics Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: sticky top nav, full-bleed photo hero, alternating light/tint content bands, card grids per section */
+:root {
+  --bg: #FFFFFF;
+  --band: #F2F5FA;
+  --surface: #FFFFFF;
+  --fg: #1B2740;
+  --muted: #5B6B85;
+  --border: #E3E8F0;
+  --navy: #1B2E4F;
+  --accent: #1C7FB0;
+  --accent-2: #B8862B;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1626; --band: #141F36; --surface: #172038; --fg: #E9EEF7; --muted: #9AA7C2; --border: #2A3654;
+    --navy: #C6D5EE; --accent: #4FA8D6; --accent-2: #D9A94C;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1626; --band: #141F36; --surface: #172038; --fg: #E9EEF7; --muted: #9AA7C2; --border: #2A3654;
+  --navy: #C6D5EE; --accent: #4FA8D6; --accent-2: #D9A94C;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Work Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+a { color: inherit; }
+p { margin: 0; }
+
+.container { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+.eyebrow { font-weight: 800; font-size: 12.5px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+.h2 { font-family: 'Anton', Arial, sans-serif; font-weight: 400; font-size: clamp(26px, 4.4vw, 36px); color: var(--navy); line-height: 1.1; }
+.lead { color: var(--muted); font-size: 15px; line-height: 1.6; max-width: 68ch; }
+
+/* Nav */
+.topnav {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.topnav-inner { max-width: 1080px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 14px; letter-spacing: 0.5px; text-decoration: none; color: var(--fg); flex-shrink: 0; }
+.brand img { height: 30px; width: auto; }
+.navlinks { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+.navlinks a {
+  font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none;
+  padding: 8px 10px; border-radius: 7px;
+}
+.navlinks a:hover { color: var(--accent); background: var(--band); }
+.nav-cta {
+  background: var(--accent); color: #fff !important; padding: 8px 14px !important; border-radius: 999px;
+}
+@media (max-width: 780px) {
+  .navlinks a:not(.nav-cta) { display: none; }
+  .navlinks { gap: 0; }
+}
+
+/* Hero */
+.hero { position: relative; min-height: 78vh; display: flex; align-items: flex-end; overflow: hidden; }
+.hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,18,36,0.15) 0%, rgba(10,18,36,0.55) 65%, rgba(10,18,36,0.88) 100%);
+}
+.hero-content { position: relative; z-index: 1; padding: 48px 20px 44px; max-width: 1080px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; gap: 14px; }
+.hero-kicker { font-weight: 800; font-size: 13px; letter-spacing: 2.5px; color: #BFE0F2; text-transform: uppercase; }
+.hero-title { font-family: 'Anton', Arial, sans-serif; font-weight: 400; font-size: clamp(38px, 8vw, 68px); color: #fff; line-height: 1.02; }
+.hero-tagline { font-size: 16px; color: #D9E4F2; max-width: 56ch; line-height: 1.55; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+  font-weight: 700; font-size: 13.5px; padding: 12px 20px; border-radius: 999px;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-ghost { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.4); }
+.btn-ghost:hover { background: rgba(255,255,255,0.16); }
+
+/* Sections */
+section { padding-block: 64px; }
+.band { background: var(--band); }
+.section-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 34px; }
+
+/* Stat row */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
+.stat { text-align: center; padding: 22px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+.stat-num { font-family: 'Anton', Arial, sans-serif; font-size: 34px; color: var(--accent); line-height: 1; }
+.stat-label { font-size: 12.5px; color: var(--muted); margin-top: 6px; font-weight: 600; }
+@media (max-width: 640px) { .stats { grid-template-columns: 1fr 1fr; } }
+
+.about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+.about-grid img { border-radius: 16px; width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+@media (max-width: 780px) { .about-grid { grid-template-columns: 1fr; } }
+
+/* Competitions */
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.comp-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+.comp-card img { height: 190px; object-fit: cover; width: 100%; }
+.comp-body { padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+.comp-title { font-family: 'Anton', Arial, sans-serif; font-size: 22px; color: var(--navy); }
+.comp-body p { color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+@media (max-width: 780px) { .comp-grid { grid-template-columns: 1fr; } }
+
+/* Achievements */
+.ach-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
+.ach-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+.ach-org { font-family: 'Anton', Arial, sans-serif; font-size: 18px; color: var(--accent); }
+.ach-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.ach-list li { font-size: 13px; line-height: 1.5; padding-inline-start: 14px; position: relative; color: var(--fg); }
+.ach-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-2); }
+.ach-list .yr { color: var(--muted); font-weight: 600; }
+@media (max-width: 900px) { .ach-grid { grid-template-columns: 1fr; } }
+
+.spotlight { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 30px; }
+.spotlight-card { position: relative; border-radius: 16px; overflow: hidden; min-height: 260px; display: flex; align-items: flex-end; }
+.spotlight-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.spotlight-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,36,0) 40%, rgba(10,18,36,0.82) 100%); }
+.spotlight-body { position: relative; z-index: 1; padding: 22px; color: #fff; }
+.spotlight-body .tag { font-weight: 800; font-size: 11.5px; letter-spacing: 1.5px; color: #BFE0F2; text-transform: uppercase; }
+.spotlight-body h3 { font-family: 'Anton', Arial, sans-serif; font-size: 21px; font-weight: 400; margin-top: 4px; }
+.spotlight-body p { font-size: 13px; color: #E1E9F5; margin-top: 6px; line-height: 1.5; }
+@media (max-width: 780px) { .spotlight { grid-template-columns: 1fr; } }
+
+/* STEM */
+.stem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 10px; }
+.stem-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.stem-grade { display: inline-block; align-self: flex-start; background: var(--band); color: var(--accent); font-weight: 800; font-size: 11.5px; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.5px; }
+.stem-card h3 { font-family: 'Anton', Arial, sans-serif; font-weight: 400; font-size: 19px; color: var(--navy); margin-top: 4px; }
+.stem-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.stem-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+.stem-photos img { border-radius: 14px; height: 220px; object-fit: cover; width: 100%; }
+@media (max-width: 900px) { .stem-grid { grid-template-columns: 1fr; } .stem-photos { grid-template-columns: 1fr; } }
+
+/* Kickoff */
+.kickoff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.kickoff-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.kickoff-photos img { border-radius: 14px; height: 150px; object-fit: cover; width: 100%; }
+.kickoff-photos img:first-child { grid-column: 1 / -1; height: 200px; }
+.callout {
+  background: var(--navy); color: #fff; border-radius: 16px; padding: 22px 24px; margin-top: 20px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.callout .tag { font-weight: 800; font-size: 11.5px; letter-spacing: 1.5px; color: #9FC7DD; text-transform: uppercase; }
+.callout .big { font-family: 'Anton', Arial, sans-serif; font-size: 20px; }
+.callout p { font-size: 13px; color: #CBD9EC; }
+@media (max-width: 780px) { .kickoff-grid { grid-template-columns: 1fr; } }
+
+/* Sponsorship */
+.sponsor-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 30px 0; }
+@media (max-width: 780px) { .sponsor-stats { grid-template-columns: 1fr 1fr; } }
+.sponsor-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
+.sponsor-photos img { border-radius: 14px; height: 220px; object-fit: cover; width: 100%; }
+@media (max-width: 780px) { .sponsor-photos { grid-template-columns: 1fr; } }
+.partner-row { display: flex; align-items: center; justify-content: center; gap: 44px; flex-wrap: wrap; padding: 26px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; }
+.partner-row img { height: 46px; width: auto; object-fit: contain; }
+
+/* Calendar CTA */
+.cal-cta {
+  background: linear-gradient(135deg, var(--navy), #10203A);
+  border-radius: 20px; padding: 40px 32px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 14px; color: #fff;
+}
+.cal-cta .h2 { color: #fff; }
+.cal-cta p { color: #C9D6EA; max-width: 52ch; font-size: 14px; }
+
+/* Footer */
+footer { border-top: 1px solid var(--border); padding-block: 36px; }
+.footer-grid { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 13px; }
+.footer-brand img { height: 26px; }
+.footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 600; }
+.footer-links a:hover { color: var(--accent); }
+.footer-note { font-size: 11.5px; color: var(--muted); margin-top: 18px; text-align: center; }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="Luminous"> LUMINOUS &middot; 9233</a>
+    <div class="navlinks">
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#yarismalar">Yarışmalar</a>
+      <a href="#basarilar">Başarılar</a>
+      <a href="#stem">STEM</a>
+      <a href="#kickoff">Kickoff</a>
+      <a href="#sponsorluk">Sponsorluk</a>
+      <a class="nav-cta" href="takvim.html">Takvim</a>
+    </div>
+  </div>
+</nav>
+
+<div id="top" class="hero">
+  <img class="bg" src="assets/hero.jpg" alt="Luminous Robotics Team">
+  <div class="hero-content">
+    <div class="hero-kicker">Luminous Robotics Team &middot; Takım 9233 &middot; Antalya</div>
+    <h1 class="hero-title">Işığı Yayıyoruz</h1>
+    <p class="hero-tagline">2018&rsquo;den beri Antalya&rsquo;dan dünyaya; FRC ve VEX&rsquo;te uluslararası derecelere sahip, üretim odaklı bir robotik takımı.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="takvim.html">Sezon Takvimini Gör</a>
+      <a class="btn btn-ghost" href="https://instagram.com/luminousteam" target="_blank" rel="noopener">@luminousteam</a>
+    </div>
+  </div>
+</div>
+
+<section id="hakkimizda">
+  <div class="container">
+    <div class="about-grid">
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="eyebrow">Biz Kimiz</div>
+        <h2 class="h2">Antalya&rsquo;dan dünyaya, üretim temelli bir düşünme kültürü</h2>
+        <p class="lead">Luminous Robotik Takımı, 25 Ekim 2018&rsquo;de Antalya Bahçeşehir Anadolu Lisesi&rsquo;nde, adımızdan ilhamla &ldquo;ışığı yaymak&rdquo; hedefiyle kuruldu. Bilim ve teknolojiyi bir araya getirerek gençlere üretim temelli bir düşünme kültürü kazandırmayı amaçlayan takımımız, pandemi sürecinin ardından 2023 yılında &ldquo;returning team&rdquo; olarak yeniden sahalara döndü.</p>
+        <p class="lead">Bugüne kadar yalnızca robotik üretimiyle değil; STEM, mühendislik, girişimcilik ve toplumsal farkındalık alanlarında yürüttüğümüz çalışmalarla da adımızdan söz ettirdik. &ldquo;Duyarlı profesyonellik&rdquo; ilkesiyle hareket eden takımımız, bilimi ve mühendisliği sanat ve toplumsal fayda ile harmanlayarak kalıcı ve sürdürülebilir bir etki yaratmayı hedefliyor.</p>
+        <div class="stats">
+          <div class="stat"><div class="stat-num">2018</div><div class="stat-label">KURULUŞ</div></div>
+          <div class="stat"><div class="stat-num">2023</div><div class="stat-label">RETURNING TEAM</div></div>
+          <div class="stat"><div class="stat-num">36+</div><div class="stat-label">ULUSLARARASI TAKIM BAĞLANTISI</div></div>
+        </div>
+      </div>
+      <img src="assets/team-group.jpg" alt="Luminous takım fotoğrafı">
+    </div>
+  </div>
+</section>
+
+<section id="yarismalar" class="band">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Katıldığımız Yarışmalar</div>
+      <h2 class="h2">FRC ve VEX&rsquo;te gerçek mühendislik deneyimi</h2>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <img src="assets/frc.jpg" alt="FRC yarışması">
+        <div class="comp-body">
+          <div class="comp-title">FRC</div>
+          <p>FIRST Robotics Competition, lise öğrencilerine gerçek bir mühendislik deneyimi sunarak teorik bilginin pratiğe dönüşmesini sağlar. Öğrenciler robot tasarımı, yazılım ve elektronik gibi alanlarda aktif rol alırken; zaman yönetimi, problem çözme ve üretim kültürünü birebir deneyimler.</p>
+        </div>
+      </div>
+      <div class="comp-card">
+        <img src="assets/vex.jpg" alt="VEX Robotics">
+        <div class="comp-body">
+          <div class="comp-title">VEX Robotics</div>
+          <p>40&rsquo;tan fazla ülkeden 18.000 takımın 1350 oyunda yarıştığı, ortaokul ve liselere yönelik dünyanın en büyük robotik etkinliklerinden biridir. Öğrencilerin ekip çalışması, iletişim, proje yönetimi ve eleştirel düşünme becerilerini geliştirmelerine olanak sağlar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="basarilar">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Başarılarımız</div>
+      <h2 class="h2">Ulusal ve uluslararası ödüllerimiz</h2>
+    </div>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <div class="ach-org">FRC</div>
+        <ul class="ach-list">
+          <li>Highest Rookie Seed Award <span class="yr">&middot; 2023 Bosphorus Regional</span></li>
+          <li>Team Spirit Award <span class="yr">&middot; 2024 New York City Regional</span></li>
+          <li>Imagery Award in Honor of Jack Kamen <span class="yr">&middot; 2026 İstanbul Regional</span></li>
+          <li>Rising All-Star Award <span class="yr">&middot; 2026 Las Vegas Regional</span></li>
+        </ul>
+      </div>
+      <div class="ach-card">
+        <div class="ach-org">FLL</div>
+        <ul class="ach-list">
+          <li>The Most Inspiring Team Award <span class="yr">&middot; 2019 İzmir</span></li>
+          <li>Innovation Project Award <span class="yr">&middot; 2023 İzmir</span></li>
+          <li>Innovation Project Award <span class="yr">&middot; 2024 İzmir</span></li>
+        </ul>
+      </div>
+      <div class="ach-card">
+        <div class="ach-org">VEX</div>
+        <ul class="ach-list">
+          <li>Innovate Award <span class="yr">&middot; 2024 Antalya Regional</span></li>
+          <li>Energy Award <span class="yr">&middot; 2024 Türkiye National Championship</span></li>
+          <li>Innovate Award <span class="yr">&middot; 2025 Ankara Regional</span></li>
+          <li>Energy Award <span class="yr">&middot; 2025 Türkiye National Championship</span></li>
+          <li>Tournament Champion <span class="yr">&middot; 2025 Antalya Off-Season</span></li>
+          <li>Excellence Award <span class="yr">&middot; 2025 Antalya Off-Season</span></li>
+          <li>Innovate Award <span class="yr">&middot; 2026 Ankara Regional</span></li>
+          <li>Design Award <span class="yr">&middot; 2026 Antalya Off-Season</span></li>
+          <li>Excellence Award <span class="yr">&middot; 2026 Antalya Off-Season</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="spotlight">
+      <div class="spotlight-card">
+        <img src="assets/team-huddle.jpg" alt="New York'ta Team Spirit Award">
+        <div class="spotlight-body">
+          <div class="tag">Luminous Amerika&rsquo;da &middot; New York</div>
+          <h3>Team Spirit Award &mdash; 2024</h3>
+          <p>FRC New York City Regional&rsquo;da kazanılan bu ödül, takım ruhumuzun uluslararası arenada da karşılık bulduğunun bir göstergesi oldu.</p>
+        </div>
+      </div>
+      <div class="spotlight-card">
+        <img src="assets/stadium.jpg" alt="Las Vegas'ta Rising All-Star Award">
+        <div class="spotlight-body">
+          <div class="tag">Luminous Amerika&rsquo;da &middot; Las Vegas</div>
+          <h3>Rising All-Star Award &mdash; 2026</h3>
+          <p>FRC Las Vegas Regional&rsquo;da ülkemizi temsil ederek kazandığımız bu ödülle takım olarak neler başarabileceğimizi gördük.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stem" class="band">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">STEM Çalışmalarımız</div>
+      <h2 class="h2">Okul öncesinden 4. sınıfa kademeli STEM kitleri</h2>
+      <p class="lead">Kendi atölyemizde tasarladığımız kademeli STEM kitleriyle okul öncesinden 4. sınıfa kadar mühendislik düşüncesini deneyimletiyoruz.</p>
+    </div>
+    <div class="stem-grid">
+      <div class="stem-card">
+        <span class="stem-grade">2. SINIF</span>
+        <h3>Vinç Seti Kiti</h3>
+        <p>Makaralar ve yük dengesi üzerine temel mekanik kavramlar.</p>
+      </div>
+      <div class="stem-card">
+        <span class="stem-grade">3. SINIF</span>
+        <h3>Mancınık Kiti</h3>
+        <p>Kuvvet, açı ve atış hareketi ile fizik prensiplerini keşfetme.</p>
+      </div>
+      <div class="stem-card">
+        <span class="stem-grade">4. SINIF</span>
+        <h3>Sonsuz Dişliler</h3>
+        <p>Dişli oranları ve mekanik aktarım sistemlerini anlama.</p>
+      </div>
+    </div>
+    <div class="stem-photos">
+      <img src="assets/stem-workshop.jpg" alt="STEM atölyesi">
+      <img src="assets/stem-kids.jpg" alt="STEM kitiyle çalışan öğrenciler">
+    </div>
+  </div>
+</section>
+
+<section id="kickoff">
+  <div class="container">
+    <div class="kickoff-grid">
+      <div>
+        <div class="eyebrow">Kickoff</div>
+        <h2 class="h2" style="margin-top:10px;">Antalya&rsquo;nın ilk ve tek Kickoff&rsquo;u</h2>
+        <p class="lead" style="margin-top:14px;">Antalya&rsquo;nın ilk ve tek Kickoff&rsquo;unu düzenledik: kurallar, workshoplar ve yeni takımlarla tanışma bir arada. Bu sezon yeniden düzenlemek için heyecanlıyız.</p>
+        <div class="callout">
+          <div class="tag">2027 Antalya Kickoff</div>
+          <div class="big">9 Ocak 2027 &middot; 11:00</div>
+          <p>Bahçeşehir Koleji Lara Kampüsü, Muratpaşa/Antalya &mdash; FIRST ve FYF iş birliğiyle resmi olarak organize ediyoruz.</p>
+        </div>
+      </div>
+      <div class="kickoff-photos">
+        <img src="assets/kickoff-group.jpg" alt="Kickoff'ta takım buluşması">
+        <img src="assets/kickoff-workshop.jpg" alt="Kickoff workshop">
+        <img src="assets/kickoff-poster.jpg" alt="Kickoff posteri">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsorluk" class="band">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Sponsorluk ve Görüşmeler</div>
+      <h2 class="h2">Yerel yönetimlerle ve şirketlerle kurduğumuz bağlar</h2>
+      <p class="lead">Bu bağlar; STEAM kültürünü daha geniş kitlelere taşımamızı ve FIRST topluluğuyla bağlarımızı güçlendirmemizi sağladı.</p>
+    </div>
+    <div class="sponsor-stats">
+      <div class="stat"><div class="stat-num">36</div><div class="stat-label">FRC TAKIMIYLA GÖRÜŞME</div></div>
+      <div class="stat"><div class="stat-num">54</div><div class="stat-label">ŞİRKETLE İLETİŞİM</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">AKTİF İŞ BİRLİĞİ</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">BELEDİYEYLE GÖRÜŞME</div></div>
+    </div>
+    <div class="sponsor-photos">
+      <img src="assets/sponsor-meeting1.jpg" alt="Sponsorluk görüşmesi">
+      <img src="assets/sponsor-meeting2.jpg" alt="Şirket ziyareti">
+    </div>
+    <div class="partner-row">
+      <img src="assets/first-logo.png" alt="FIRST">
+      <img src="assets/fyf-logo.png" alt="Fikret Yüksel Foundation">
+      <img src="assets/logo.png" alt="Luminous Robotics Team">
+    </div>
+  </div>
+</section>
+
+<section id="takvim-cta">
+  <div class="container">
+    <div class="cal-cta">
+      <div class="eyebrow" style="color:#9FC7DD;">2026&ndash;27 Sezonu</div>
+      <h2 class="h2">Tüm sezon takvimini incele</h2>
+      <p>Kayıt, ödül başvurusu, kit ve yarışma tarihlerinin tamamı &mdash; ay ay, güncel ve düzenlenebilir.</p>
+      <a class="btn btn-primary" href="takvim.html">Sezon Takvimine Git</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="assets/logo.png" alt="Luminous"> LUMINOUS ROBOTICS TEAM &middot; 9233</div>
+      <div class="footer-links">
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#basarilar">Başarılar</a>
+        <a href="takvim.html">Takvim</a>
+        <a href="https://instagram.com/luminousteam" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-note">Bahçeşehir Koleji Lara Kampüsü &middot; Muratpaşa/Antalya</div>
+  </div>
+</footer>
+
+</body>
+</html>
