@@ -35,7 +35,7 @@
       "events": [
         { "day": "5", "dow": "Per", "cat": "kayit", "title": "Ek (bölgeler arası) etkinlik kayıt açılışı", "desc": "", "time": "" },
         { "day": "8", "dow": "Paz", "cat": "ozel", "title": "Ulusal STEM Günü", "desc": "Post fikri — STEM kit programından örnekler paylaşılabilir.", "time": "" }
-         { "day": "9", "dow": "Paz", "cat": "ozel", "title": "Deneme", "desc": "Deneme metni", "time": "13:00" },
+         { "day": "9", "dow": "Pzt", "cat": "ozel", "title": "Deneme", "desc": "Deneme metni", "time": "13:00" },
         { "day": "12", "dow": "Per", "cat": "kit", "title": "Kickoff öncesi sanal kit paylaşımı", "desc": "", "time": "" },
         { "day": "14", "dow": "Cmt", "cat": "gorev", "title": "Kickoff Genel Kontrol Toplantısı + zaman çizelgesi/program kitapçığı teslimi", "desc": "Etkinliğin zaman çizelgesi ve dijital program kitapçığının FYF'ye teslim son tarihi.", "time": "19:30" },
         { "day": "15", "dow": "Paz", "cat": "gorev", "title": "Kickoff gönüllü/eğitmen ihtiyacı bildirim son tarihi", "desc": "Gönüllü veya eğitmen ihtiyacın varsa FYF ile bu tarihe kadar iletişime geçilmeli; gönüllü rollerini (görev tanımı, saat şartı vb.) listeleyen form hazırlanması bekleniyor.", "time": "" },
