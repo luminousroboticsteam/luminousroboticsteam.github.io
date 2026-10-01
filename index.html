@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luminous Robotics Team</title>
 <meta name="description" content="Luminous Robotics Team (Takım 9233) — Antalya merkezli FRC ve VEX robotik takımı. Yarışmalar, başarılar, STEM eğitim kitleri ve 2027 Antalya Kickoff etkinliği.">
+<meta name="keywords" content="Luminous Robotics Team, Luminous 9233, FRC Antalya, FIRST Robotics Competition, Antalya Kickoff 2027, VEX Robotics Antalya, Bahçeşehir Koleji Lara Kampüsü, STEM Antalya, robotik takımı Antalya">
 <link rel="canonical" href="https://luminousroboticsteam.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Luminous Robotics Team · 9233">
@@ -232,6 +233,20 @@ section { padding-block: 64px; }
   .announce-head { margin-top: 36px; }
   .announce-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
 }
+.program-head { margin-top: 56px; margin-bottom: 22px; text-align: center; }
+.program-head .label { font-weight: 800; font-size: 12.5px; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; }
+.program-head h3 { font-family: 'Anton', Arial, sans-serif; font-weight: 400; font-size: 26px; margin: 8px 0 0; }
+.program-head p { font-size: 13.5px; color: var(--muted); margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.program-timeline { max-width: 760px; margin: 0 auto; border-left: 2px solid var(--border); padding-left: 28px; display: flex; flex-direction: column; gap: 26px; }
+.program-item { position: relative; }
+.program-item::before {
+  content: ''; position: absolute; left: -33.5px; top: 4px; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); border: 3px solid var(--bg);
+}
+.program-time { font-family: 'Anton', Arial, sans-serif; font-size: 15px; color: var(--accent); letter-spacing: 0.3px; }
+.program-item h4 { font-size: 15.5px; margin: 2px 0 4px; }
+.program-item p { font-size: 13.5px; color: var(--muted); }
+@media (max-width: 780px) { .program-timeline { padding-left: 22px; } .program-item::before { left: -27.5px; } }
 
 /* Sponsorship */
 .sponsor-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 30px 0; }
@@ -457,7 +472,7 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
         <p class="lead" style="margin-top:14px;">Antalya&rsquo;nın ilk ve tek Kickoff&rsquo;unu düzenledik: kurallar, workshoplar ve yeni takımlarla tanışma bir arada. Bu sezon yeniden düzenlemek için heyecanlıyız.</p>
         <div class="callout">
           <div class="tag">2027 Antalya Kickoff</div>
-          <div class="big">9 Ocak 2027 &middot; 11:00</div>
+          <div class="big">9 Ocak 2027 &middot; 15:00</div>
           <p>Bahçeşehir Koleji Lara Kampüsü, Muratpaşa/Antalya &mdash; FIRST ve FYF iş birliğiyle resmi olarak organize ediyoruz.</p>
         </div>
         <div class="countdown" id="kickoffCountdown">
@@ -490,11 +505,53 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
       <a href="assets/kickoff-announce-2.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/kickoff-announce-2.jpg" alt="Kickoff ev sahibi kampüs duyurusu"></a>
       <a href="assets/kickoff-announce-3.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/kickoff-announce-3.jpg" alt="Luminous 9233 Kickoff ev sahipliği duyurusu"></a>
     </div>
+    <div class="program-head">
+      <div class="label">Günün Akışı</div>
+      <h3>Kickoff Günü Programı</h3>
+      <p>9 Ocak 2027, Cumartesi &middot; Bahçeşehir Koleji Lara Kampüsü, Muratpaşa/Antalya</p>
+    </div>
+    <div class="program-timeline">
+      <div class="program-item">
+        <div class="program-time">15:00</div>
+        <h4>Kapılar açılıyor &amp; kayıt</h4>
+        <p>Takımlar salona alınır, kayıt ve yerleşme yapılır.</p>
+      </div>
+      <div class="program-item">
+        <div class="program-time">15:30 &ndash; 16:00</div>
+        <h4>Açılış töreni</h4>
+        <p>Hoş geldiniz konuşması, FIRST temel değerleri ve güvenlik bilgilendirmesi.</p>
+      </div>
+      <div class="program-item">
+        <div class="program-time">16:00</div>
+        <h4>Ödüllü STEM Hazine Avı başlıyor</h4>
+        <p>Gün boyunca süren, erken gelen takımların avantajlı olduğu bir etkinlik.</p>
+      </div>
+      <div class="program-item">
+        <div class="program-time">16:00 &ndash; 17:00</div>
+        <h4>Workshop: Quick Robot Build &amp; Kitbot Montajı</h4>
+        <p>Yeni takımlar için uygulamalı bir atölye.</p>
+      </div>
+      <div class="program-item">
+        <div class="program-time">Gün boyunca</div>
+        <h4>Atölyeler, konser ve oyunlar</h4>
+        <p>Kampüs genelinde farklı etkinlik ve aktiviteler devam eder.</p>
+      </div>
+      <div class="program-item">
+        <div class="program-time">20:00</div>
+        <h4>2027 sezon oyununun canlı yayını</h4>
+        <p>FIRST'ün resmi yayınıyla bu yılın oyunu tüm dünyayla birlikte açıklanır.</p>
+      </div>
+      <div class="program-item">
+        <div class="program-time">21:00</div>
+        <h4>Ödül töreni &amp; kit dağıtımı</h4>
+        <p>Gün boyunca yapılan etkinliklerin ödülleri açıklanır, kitler takımlara teslim edilir.</p>
+      </div>
+    </div>
   </div>
 </section>
 <script>
 (function(){
-  var target = new Date('2027-01-09T11:00:00+03:00').getTime();
+  var target = new Date('2027-01-09T15:00:00+03:00').getTime();
   var elDays = document.getElementById('cdDays');
   var elHours = document.getElementById('cdHours');
   var elMins = document.getElementById('cdMins');

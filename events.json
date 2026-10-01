@@ -56,7 +56,7 @@
       "name": "Ocak 2027",
       "note": "",
       "events": [
-        { "day": "9", "dow": "Cmt", "cat": "yarisma", "milestone": true, "title": "KICKOFF — BIOCORE™ presented by Haas", "desc": "Sezonun oyunu açıklanıyor. Kit parçaları değişim sistemi ve FIRST Choice öncelikli listesi de bugün başlıyor. FIRST'ün resmi canlı yayını Türkiye saatiyle tahmini 20:00'de.", "time": "12:00–13:30 (Antalya Kickoff programı)" },
+        { "day": "9", "dow": "Cmt", "cat": "yarisma", "milestone": true, "title": "KICKOFF — BIOCORE™ presented by Haas", "desc": "Sezonun oyunu açıklanıyor. Kit parçaları değişim sistemi ve FIRST Choice öncelikli listesi de bugün başlıyor. FIRST'ün resmi canlı yayını Türkiye saatiyle tahmini 20:00'de.", "time": "15:00–21:00 (Antalya Kickoff programı)" },
         { "day": "13", "dow": "Çar", "cat": "kit", "title": "Resmi Soru-Cevap (Q&A) açılışı", "desc": "", "time": "" },
         { "day": "16", "dow": "Cmt", "cat": "kit", "title": "Kit parçaları değişim sistemi kapanışı", "desc": "", "time": "" },
         { "day": "18", "dow": "Pzt", "cat": "kit", "title": "FIRST Choice öncelikli listesi kapanışı", "desc": "", "time": "" },
