@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kickoff Günü Programı · Luminous Robotics Team</title>
-<meta name="description" content="2027 Antalya Kickoff günü programı — 9 Ocak 2027, Bahçeşehir Koleji Lara Kampüsü. Saat saat akış.">
+<meta name="description" content="2027 Antalya Kickoff günü programı — 9 Ocak 2027, Bahçeşehir Koleji Lara Kampüsü. Saat saat, salon salon tüm akış.">
 <link rel="canonical" href="https://luminousroboticsteam.github.io/kickoff-programi.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kickoff Günü Programı · Luminous Robotics Team">
-<meta property="og:description" content="2027 Antalya Kickoff günü programı — 9 Ocak 2027, Bahçeşehir Koleji Lara Kampüsü. Saat saat akış.">
+<meta property="og:description" content="2027 Antalya Kickoff günü programı — 9 Ocak 2027, Bahçeşehir Koleji Lara Kampüsü. Saat saat, salon salon tüm akış.">
 <meta property="og:image" content="https://luminousroboticsteam.github.io/assets/hero.jpg">
 <meta property="og:url" content="https://luminousroboticsteam.github.io/kickoff-programi.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,46 +20,70 @@
 <style>
 :root {
   --bg: #F6F8FB; --surface: #FFFFFF; --fg: #1B2740; --muted: #64708A; --border: #E3E8F0;
-  --accent: #1C7FB0; --navy: #1B2E4F;
+  --accent: #1C7FB0; --navy: #1B2E4F; --band: #ECEEF5; --live: #FCF1DC; --live-text: #8A5A00;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #10182B; --surface: #172038; --fg: #E9EEF7; --muted: #94A1BE; --border: #2A3654;
-    --accent: #4FA8D6; --navy: #C6D5EE;
+    --accent: #4FA8D6; --navy: #C6D5EE; --band: #1C2440; --live: #3A2E14; --live-text: #F2B33D;
     color-scheme: dark;
   }
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body { background: var(--bg); color: var(--fg); font-family: 'Work Sans', Arial, sans-serif; padding-inline: 16px; }
-h1, h2 { text-wrap: balance; margin: 0; }
+h1, h2, h3, h4 { text-wrap: balance; margin: 0; }
 a { color: inherit; }
 
-.wrap { max-width: 760px; margin: 0 auto; }
+.wrap { max-width: 920px; margin: 0 auto; }
 .page-header { padding-block: 28px 6px; display: flex; flex-direction: column; gap: 6px; }
 .kicker { font-weight: 800; font-size: 12.5px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
 .title { font-family: 'Anton', Arial, sans-serif; font-weight: 400; font-size: clamp(28px, 6vw, 42px); color: var(--navy); line-height: 1.05; }
 .subtitle { font-size: 14px; color: var(--muted); line-height: 1.5; max-width: 60ch; }
 
-.program-table { width: 100%; border-collapse: collapse; margin-top: 28px; }
-.program-table tr { border-top: 1px solid var(--border); }
-.program-table tr:first-child { border-top: none; }
-.program-table td { padding: 16px 10px; vertical-align: top; }
-.time-cell { width: 110px; font-family: 'Anton', Arial, sans-serif; font-size: 16px; color: var(--accent); white-space: nowrap; }
-.event-cell h2 { font-size: 15.5px; font-weight: 700; margin-bottom: 4px; }
-.event-cell p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.5; }
-
 .info-strip { display: flex; flex-wrap: wrap; gap: 16px; padding-block: 16px; margin-top: 8px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: 13px; color: var(--muted); }
 .info-strip strong { color: var(--fg); }
 
+.room-legend { display: flex; flex-wrap: wrap; gap: 8px; padding-block: 16px 4px; }
+.room-chip { font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); color: var(--muted); }
+
+.schedule { display: flex; flex-direction: column; margin-top: 18px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--surface); }
+.row { border-bottom: 1px solid var(--border); }
+.row:last-child { border-bottom: none; }
+
+.row.banner { display: grid; grid-template-columns: 118px 1fr; background: var(--band); }
+.row.banner.live { background: var(--live); }
+.row.banner .time { padding: 14px 12px 14px 18px; font-size: 13px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.row.banner.live .time { color: var(--live-text); }
+.row.banner .content { padding: 14px 18px 14px 0; }
+.row.banner h3 { font-size: 15px; font-weight: 700; }
+.row.banner p { font-size: 13px; color: var(--muted); margin: 3px 0 0; }
+
+.row.parallel { display: grid; grid-template-columns: 118px 1fr; }
+.row.parallel .time { padding: 14px 12px 14px 18px; font-size: 13px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; border-right: 1px solid var(--border); }
+.row.parallel .sessions { display: grid; grid-template-columns: repeat(4, 1fr); }
+.sess { padding: 12px 14px; border-left: 1px solid var(--border); min-width: 0; }
+.sess:first-child { border-left: none; }
+.sess .room-label { display: none; font-size: 10.5px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.sess h4 { font-size: 13.5px; font-weight: 700; line-height: 1.3; }
+.sess p { font-size: 12px; color: var(--muted); margin: 4px 0 0; line-height: 1.4; }
+.sess.empty { color: var(--muted); font-size: 12px; }
+
+@media (max-width: 760px) {
+  .row.parallel { grid-template-columns: 1fr; }
+  .row.parallel .time { border-right: none; border-bottom: 1px solid var(--border); }
+  .row.parallel .sessions { grid-template-columns: 1fr; }
+  .sess { border-left: none; border-top: 1px solid var(--border); }
+  .sess:first-child { border-top: none; }
+  .sess .room-label { display: block; }
+  .row.banner { grid-template-columns: 1fr; }
+  .row.banner .time { padding-bottom: 0; }
+  .row.banner .content { padding: 4px 18px 14px; }
+}
+
 footer { padding-block: 28px 40px; font-size: 11.5px; color: var(--muted); line-height: 1.6; }
 footer a { color: var(--accent); text-decoration: underline; }
-
-@media (max-width: 480px) {
-  .program-table td { padding: 12px 6px; }
-  .time-cell { width: 76px; font-size: 14px; }
-}
 </style>
 </head>
 <body>
@@ -78,36 +102,86 @@ footer a { color: var(--accent); text-decoration: underline; }
     <div>📍 <strong>Bahçeşehir Koleji Lara Kampüsü</strong>, Muratpaşa/Antalya</div>
   </div>
 
-  <table class="program-table">
-    <tr>
-      <td class="time-cell">15:00</td>
-      <td class="event-cell"><h2>Kapılar açılıyor &amp; kayıt</h2><p>Takımlar salona alınır, kayıt ve yerleşme yapılır.</p></td>
-    </tr>
-    <tr>
-      <td class="time-cell">15:30&ndash;16:00</td>
-      <td class="event-cell"><h2>Açılış töreni</h2><p>Hoş geldiniz konuşması, FIRST temel değerleri ve güvenlik bilgilendirmesi.</p></td>
-    </tr>
-    <tr>
-      <td class="time-cell">16:00</td>
-      <td class="event-cell"><h2>Ödüllü STEM Hazine Avı başlıyor</h2><p>Gün boyunca süren, erken gelen takımların avantajlı olduğu bir etkinlik.</p></td>
-    </tr>
-    <tr>
-      <td class="time-cell">16:00&ndash;17:00</td>
-      <td class="event-cell"><h2>Workshop: Quick Robot Build &amp; Kitbot Montajı</h2><p>Yeni takımlar için uygulamalı bir atölye.</p></td>
-    </tr>
-    <tr>
-      <td class="time-cell">Gün boyunca</td>
-      <td class="event-cell"><h2>Atölyeler, konser ve oyunlar</h2><p>Kampüs genelinde farklı etkinlik ve aktiviteler devam eder.</p></td>
-    </tr>
-    <tr>
-      <td class="time-cell">20:00</td>
-      <td class="event-cell"><h2>2027 sezon oyununun canlı yayını</h2><p>FIRST&rsquo;ün resmi yayınıyla bu yılın oyunu tüm dünyayla birlikte açıklanır.</p></td>
-    </tr>
-    <tr>
-      <td class="time-cell">21:00</td>
-      <td class="event-cell"><h2>Ödül töreni &amp; kit dağıtımı</h2><p>Gün boyunca yapılan etkinliklerin ödülleri açıklanır, kitler takımlara teslim edilir.</p></td>
-    </tr>
-  </table>
+  <div class="room-legend">
+    <span class="room-chip">Ana Salon</span>
+    <span class="room-chip">STEM Jr Lab</span>
+    <span class="room-chip">Robotik Lab</span>
+    <span class="room-chip">Mekatronik Lab</span>
+  </div>
+
+  <div class="schedule">
+
+    <div class="row banner">
+      <div class="time">15:00&ndash;15:30</div>
+      <div class="content"><h3>Takım Kaydı ve Karşılama</h3><p>Kayıt, yaka kartları ve evrak kontrolü.</p></div>
+    </div>
+
+    <div class="row banner">
+      <div class="time">15:30&ndash;16:00</div>
+      <div class="content"><h3>Açılış &mdash; Ana Salon</h3><p>Hoş geldiniz, FIRST temel değerleri, güvenlik brifingi ve günün akışı.</p></div>
+    </div>
+
+    <div class="row banner">
+      <div class="time">16:00&ndash;19:45</div>
+      <div class="content"><h3>STEM Lab: Oyun Alanı</h3><p>Gün boyu açık &middot; Just Dance ve mancınıkla hedef oyunu.</p></div>
+    </div>
+
+    <div class="row parallel">
+      <div class="time">16:00&ndash;17:00</div>
+      <div class="sessions">
+        <div class="sess"><div class="room-label">Ana Salon</div><h4>FRC Sahnede: Gösterim ve Tanıtım</h4><p>Herkes &middot; FRC nedir, sezon nasıl işler</p></div>
+        <div class="sess"><div class="room-label">STEM Jr Lab</div><h4>Ödüllü STEM Hazine Avı</h4><p>Bulmaca çözme, ittifak kurma ve montaj yarışması</p></div>
+        <div class="sess"><div class="room-label">Robotik Lab</div><h4>Programlamaya Giriş ve Systemcore</h4><p>Teknik &middot; Java/C++</p></div>
+        <div class="sess"><div class="room-label">Mekatronik Lab</div><h4>Quick Robot Build &amp; Kitbot Montajı</h4><p>Rookie takımlar &middot; önce video, sonra uygulama</p></div>
+      </div>
+    </div>
+
+    <div class="row parallel">
+      <div class="time">17:00&ndash;18:00</div>
+      <div class="sessions">
+        <div class="sess"><div class="room-label">Ana Salon</div><h4>Mezun Söyleşisi</h4><p>Herkes</p></div>
+        <div class="sess"><div class="room-label">STEM Jr Lab</div><h4>CubeSat STEM Workshop&rsquo;u</h4><p>Uygulamalı &middot; küp uydu modeli</p></div>
+        <div class="sess"><div class="room-label">Robotik Lab</div><h4>PR, Sponsorluk ve Sunum</h4><p>Takım yönetimi &middot; sosyal medya, kaynak geliştirme, topluluk önünde konuşma</p></div>
+        <div class="sess"><div class="room-label">Mekatronik Lab</div><h4>Lazer CNC &amp; 3D Printer Workshop&rsquo;u</h4><p>Uygulamalı atölye</p></div>
+      </div>
+    </div>
+
+    <div class="row banner">
+      <div class="time">18:00&ndash;18:45</div>
+      <div class="content"><h3>Akşam Yemeği ve Takım Tanışması</h3><p>Mekânda ikram ya da yakın yemek seçenekleri.</p></div>
+    </div>
+
+    <div class="row parallel">
+      <div class="time">18:45&ndash;19:45</div>
+      <div class="sessions">
+        <div class="sess"><div class="room-label">Ana Salon</div><h4>Konser: Okul Müzik Grupları</h4><p>Herkes &middot; 19:00&rsquo;da başlar</p></div>
+        <div class="sess empty"><div class="room-label">STEM Jr Lab</div>&mdash;</div>
+        <div class="sess"><div class="room-label">Robotik Lab</div><h4>CANOPY Atölyesi</h4><p>Tema tanıtımı ve BIOCORE tahmin kartının doldurulması</p></div>
+        <div class="sess"><div class="room-label">Mekatronik Lab</div><h4>Takım Kaptanları Buluşması</h4><p>Kısa bilgilendirme, ardından konser</p></div>
+      </div>
+    </div>
+
+    <div class="row banner live">
+      <div class="time">20:00&ndash;&asymp;21:00</div>
+      <div class="content"><h3>FIRST Kickoff Ana Yayını &middot; Canlı</h3><p>Türkçe simultane çeviri ve işaret dili ile &middot; 2027 sezon oyunu açıklanır.</p></div>
+    </div>
+
+    <div class="row parallel">
+      <div class="time">21:00&ndash;21:30</div>
+      <div class="sessions">
+        <div class="sess"><div class="room-label">Ana Salon</div><h4>BIOCORE Masada: İlk Analiz</h4><p>Öğrenciler oyunu masada ilk kez inceliyor</p></div>
+        <div class="sess empty"><div class="room-label">STEM Jr Lab</div>&mdash;</div>
+        <div class="sess"><div class="room-label">Robotik Lab</div><h4>Tahmin Oyunu Ödülü</h4><p>Jüri değerlendirmesi ve ödül töreni</p></div>
+        <div class="sess"><div class="room-label">Mekatronik Lab</div><h4>Kit Teslimi</h4><p>Takımlar kitlerini teslim alır</p></div>
+      </div>
+    </div>
+
+    <div class="row banner">
+      <div class="time">21:30&ndash;22:00</div>
+      <div class="content"><h3>Kapanış</h3><p>Servisler kalkar, etkinlik sona erer.</p></div>
+    </div>
+
+  </div>
 
   <footer>
     Program taslak olup değişiklik gösterebilir. Güncel bilgi için takımımızla iletişime geçebilirsiniz.<br>
