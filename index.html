@@ -196,7 +196,12 @@ section { padding-block: 64px; }
 @media (max-width: 900px) { .stem-grid { grid-template-columns: 1fr; } .stem-photos { grid-template-columns: 1fr; } }
 
 /* Kickoff */
-.kickoff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.kickoff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
+.kickoff-left { display: flex; flex-direction: column; justify-content: center; }
+.kickoff-points { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+.kickoff-point { padding-left: 14px; border-left: 3px solid var(--accent); }
+.kickoff-point strong { display: block; font-size: 14px; color: var(--fg); }
+.kickoff-point span { font-size: 13px; color: var(--muted); }
 .kickoff-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .kickoff-photos img { border-radius: 14px; aspect-ratio: 4 / 3; height: auto; object-fit: cover; width: 100%; }
 .kickoff-photos img:first-child { grid-column: 1 / -1; aspect-ratio: 1 / 1; }
@@ -446,7 +451,7 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
 <section id="kickoff">
   <div class="container">
     <div class="kickoff-grid">
-      <div>
+      <div class="kickoff-left">
         <div class="eyebrow">Kickoff</div>
         <h2 class="h2" style="margin-top:10px;">Antalya&rsquo;nın ilk ve tek Kickoff&rsquo;u</h2>
         <p class="lead" style="margin-top:14px;">Antalya&rsquo;nın ilk ve tek Kickoff&rsquo;unu düzenledik: kurallar, workshoplar ve yeni takımlarla tanışma bir arada. Bu sezon yeniden düzenlemek için heyecanlıyız.</p>
@@ -463,6 +468,11 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
             <div class="countdown-cell"><div class="countdown-num" id="cdMins">–</div><div class="countdown-label">Dakika</div></div>
             <div class="countdown-cell"><div class="countdown-num" id="cdSecs">–</div><div class="countdown-label">Saniye</div></div>
           </div>
+        </div>
+        <div class="kickoff-points">
+          <div class="kickoff-point"><strong>FIRST yayını</strong><span>Kickoff, FIRST tarafından canlı olarak yayınlanacak.</span></div>
+          <div class="kickoff-point"><strong>Workshop'lar</strong><span>Yeni başlayan takımlar için uygulamalı atölyeler düzenliyoruz.</span></div>
+          <div class="kickoff-point"><strong>Takım buluşması</strong><span>Antalya ve çevresindeki takımlarla tanışma fırsatı.</span></div>
         </div>
       </div>
       <div class="kickoff-photos">
