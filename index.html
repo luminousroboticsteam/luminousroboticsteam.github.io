@@ -196,7 +196,7 @@ section { padding-block: 64px; }
 @media (max-width: 900px) { .stem-grid { grid-template-columns: 1fr; } .stem-photos { grid-template-columns: 1fr; } }
 
 /* Kickoff */
-.kickoff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.kickoff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 .kickoff-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .kickoff-photos img { border-radius: 14px; aspect-ratio: 4 / 3; height: auto; object-fit: cover; width: 100%; }
 .kickoff-photos img:first-child { grid-column: 1 / -1; aspect-ratio: 1 / 1; }
@@ -215,11 +215,18 @@ section { padding-block: 64px; }
 .countdown-cell { flex: 1; background: #152544; border-radius: 10px; padding: 10px 4px; text-align: center; }
 .countdown-num { font-family: 'Anton', Arial, sans-serif; font-size: 26px; color: #fff; line-height: 1; font-variant-numeric: tabular-nums; }
 .countdown-label { font-size: 10px; color: #9FB0CE; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-top: 4px; }
-.announce-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+.announce-head { margin-top: 48px; margin-bottom: 18px; }
+.announce-head .label { font-weight: 800; font-size: 12.5px; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; }
+.announce-head p { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.announce-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .announce-grid a { display: block; border-radius: 14px; overflow: hidden; }
 .announce-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform 0.2s ease; }
 .announce-grid a:hover img { transform: scale(1.03); }
-@media (max-width: 780px) { .kickoff-grid { grid-template-columns: 1fr; } .announce-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; } }
+@media (max-width: 780px) {
+  .kickoff-grid { grid-template-columns: 1fr; }
+  .announce-head { margin-top: 36px; }
+  .announce-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+}
 
 /* Sponsorship */
 .sponsor-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 30px 0; }
@@ -463,6 +470,10 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
         <img loading="lazy" decoding="async" src="assets/kickoff-workshop.jpg" alt="Kickoff workshop">
         <img loading="lazy" decoding="async" src="assets/kickoff-poster.jpg" alt="Kickoff posteri">
       </div>
+    </div>
+    <div class="announce-head">
+      <div class="label">Duyuru Görselleri</div>
+      <p>2027 Antalya Kickoff duyurusu için hazırladığımız görseller.</p>
     </div>
     <div class="announce-grid">
       <a href="assets/kickoff-announce-1.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/kickoff-announce-1.jpg" alt="2027 Antalya Kickoff duyuru görseli"></a>
