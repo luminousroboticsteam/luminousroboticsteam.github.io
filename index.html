@@ -201,13 +201,25 @@ section { padding-block: 64px; }
 .kickoff-photos img { border-radius: 14px; aspect-ratio: 4 / 3; height: auto; object-fit: cover; width: 100%; }
 .kickoff-photos img:first-child { grid-column: 1 / -1; aspect-ratio: 1 / 1; }
 .callout {
-  background: var(--navy); color: #fff; border-radius: 16px; padding: 22px 24px; margin-top: 20px;
+  background: #152544; color: #fff; border-radius: 16px; padding: 22px 24px; margin-top: 20px;
   display: flex; flex-direction: column; gap: 6px;
 }
 .callout .tag { font-weight: 800; font-size: 11.5px; letter-spacing: 1.5px; color: #9FC7DD; text-transform: uppercase; }
-.callout .big { font-family: 'Anton', Arial, sans-serif; font-size: 20px; }
+.callout .big { font-family: 'Anton', Arial, sans-serif; font-size: 20px; color: #fff; }
 .callout p { font-size: 13px; color: #CBD9EC; }
-@media (max-width: 780px) { .kickoff-grid { grid-template-columns: 1fr; } }
+.countdown {
+  background: #0E1B33; border: 1px solid #22365C; border-radius: 16px; padding: 18px 20px; margin-top: 14px;
+}
+.countdown .tag { font-weight: 800; font-size: 11.5px; letter-spacing: 1.5px; color: #9FC7DD; text-transform: uppercase; }
+.countdown-row { display: flex; gap: 10px; margin-top: 10px; }
+.countdown-cell { flex: 1; background: #152544; border-radius: 10px; padding: 10px 4px; text-align: center; }
+.countdown-num { font-family: 'Anton', Arial, sans-serif; font-size: 26px; color: #fff; line-height: 1; font-variant-numeric: tabular-nums; }
+.countdown-label { font-size: 10px; color: #9FB0CE; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-top: 4px; }
+.announce-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+.announce-grid a { display: block; border-radius: 14px; overflow: hidden; }
+.announce-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform 0.2s ease; }
+.announce-grid a:hover img { transform: scale(1.03); }
+@media (max-width: 780px) { .kickoff-grid { grid-template-columns: 1fr; } .announce-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; } }
 
 /* Sponsorship */
 .sponsor-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 30px 0; }
@@ -436,6 +448,15 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
           <div class="big">9 Ocak 2027 &middot; 11:00</div>
           <p>Bahçeşehir Koleji Lara Kampüsü, Muratpaşa/Antalya &mdash; FIRST ve FYF iş birliğiyle resmi olarak organize ediyoruz.</p>
         </div>
+        <div class="countdown" id="kickoffCountdown">
+          <div class="tag">Kickoff&rsquo;a kalan süre</div>
+          <div class="countdown-row">
+            <div class="countdown-cell"><div class="countdown-num" id="cdDays">–</div><div class="countdown-label">Gün</div></div>
+            <div class="countdown-cell"><div class="countdown-num" id="cdHours">–</div><div class="countdown-label">Saat</div></div>
+            <div class="countdown-cell"><div class="countdown-num" id="cdMins">–</div><div class="countdown-label">Dakika</div></div>
+            <div class="countdown-cell"><div class="countdown-num" id="cdSecs">–</div><div class="countdown-label">Saniye</div></div>
+          </div>
+        </div>
       </div>
       <div class="kickoff-photos">
         <img loading="lazy" decoding="async" src="assets/kickoff-group.jpg" alt="Kickoff'ta takım buluşması" style="object-position: center 82%;">
@@ -443,8 +464,42 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
         <img loading="lazy" decoding="async" src="assets/kickoff-poster.jpg" alt="Kickoff posteri">
       </div>
     </div>
+    <div class="announce-grid">
+      <a href="assets/kickoff-announce-1.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/kickoff-announce-1.jpg" alt="2027 Antalya Kickoff duyuru görseli"></a>
+      <a href="assets/kickoff-announce-2.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/kickoff-announce-2.jpg" alt="Kickoff ev sahibi kampüs duyurusu"></a>
+      <a href="assets/kickoff-announce-3.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/kickoff-announce-3.jpg" alt="Luminous 9233 Kickoff ev sahipliği duyurusu"></a>
+    </div>
   </div>
 </section>
+<script>
+(function(){
+  var target = new Date('2027-01-09T11:00:00+03:00').getTime();
+  var elDays = document.getElementById('cdDays');
+  var elHours = document.getElementById('cdHours');
+  var elMins = document.getElementById('cdMins');
+  var elSecs = document.getElementById('cdSecs');
+  if (!elDays) return;
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function tick(){
+    var now = Date.now();
+    var diff = target - now;
+    if (diff <= 0) {
+      elDays.textContent = '0'; elHours.textContent = '00'; elMins.textContent = '00'; elSecs.textContent = '00';
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    elDays.textContent = d;
+    elHours.textContent = pad(h);
+    elMins.textContent = pad(m);
+    elSecs.textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 
 <section id="sponsorluk" class="band">
   <div class="container">
