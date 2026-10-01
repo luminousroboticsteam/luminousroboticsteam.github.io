@@ -4,6 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luminous Robotics Team</title>
+<meta name="description" content="Luminous Robotics Team (Takım 9233) — Antalya merkezli FRC ve VEX robotik takımı. Yarışmalar, başarılar, STEM eğitim kitleri ve 2027 Antalya Kickoff etkinliği.">
+<link rel="canonical" href="https://luminousroboticsteam.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Luminous Robotics Team · 9233">
+<meta property="og:description" content="Antalya merkezli FRC ve VEX robotik takımı. Yarışmalar, başarılar, STEM eğitim kitleri ve 2027 Antalya Kickoff etkinliği.">
+<meta property="og:image" content="https://luminousroboticsteam.github.io/assets/hero.jpg">
+<meta property="og:url" content="https://luminousroboticsteam.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Luminous Robotics Team · 9233">
+<meta name="twitter:description" content="Antalya merkezli FRC ve VEX robotik takımı. Yarışmalar, başarılar, STEM eğitim kitleri ve 2027 Antalya Kickoff etkinliği.">
+<meta name="twitter:image" content="https://luminousroboticsteam.github.io/assets/hero.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Luminous Robotics Team",
+  "alternateName": "Luminous · 9233",
+  "url": "https://luminousroboticsteam.github.io/",
+  "logo": "https://luminousroboticsteam.github.io/assets/logo.png",
+  "sameAs": ["https://instagram.com/luminousteam"],
+  "location": { "@type": "Place", "address": "Bahçeşehir Koleji Lara Kampüsü, Muratpaşa/Antalya, Türkiye" }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -61,7 +87,7 @@ p { margin: 0; }
 .topnav-inner { max-width: 1080px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 18px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 14px; letter-spacing: 0.5px; text-decoration: none; color: var(--fg); flex-shrink: 0; }
 .brand img { height: 30px; width: auto; }
-.navlinks { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+.navlinks { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; align-items: center; }
 .navlinks a {
   font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none;
   padding: 8px 10px; border-radius: 7px;
@@ -70,9 +96,26 @@ p { margin: 0; }
 .nav-cta {
   background: var(--accent); color: #fff !important; padding: 8px 14px !important; border-radius: 999px;
 }
+.nav-toggle {
+  display: none; margin-left: auto; background: none; border: none; cursor: pointer;
+  padding: 8px; border-radius: 7px; flex-direction: column; gap: 4px;
+}
+.nav-toggle span { display: block; width: 20px; height: 2px; background: var(--fg); border-radius: 2px; }
+.nav-toggle:hover { background: var(--band); }
 @media (max-width: 780px) {
-  .navlinks a:not(.nav-cta) { display: none; }
-  .navlinks { gap: 0; }
+  .nav-toggle { display: flex; }
+  .navlinks { margin-left: 0; }
+  .navlinks a:not(.nav-cta) {
+    display: none; width: 100%; padding: 12px 20px; border-radius: 0; border-bottom: 1px solid var(--border);
+  }
+  .navlinks.open {
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    position: absolute; top: 100%; left: 0; right: 0; background: var(--surface);
+    border-bottom: 1px solid var(--border); box-shadow: 0 8px 20px rgba(10,18,36,0.08);
+  }
+  .navlinks.open a:not(.nav-cta) { display: block; }
+  .navlinks.open .nav-cta { margin: 12px 20px; text-align: center; }
+  .topnav-inner { position: relative; flex-wrap: wrap; }
 }
 
 /* Hero */
@@ -200,7 +243,10 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
 <nav class="topnav">
   <div class="topnav-inner">
     <a class="brand" href="#top"><img src="assets/logo.png" alt="Luminous"> LUMINOUS &middot; 9233</a>
-    <div class="navlinks">
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navlinks" id="navLinks">
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#yarismalar">Yarışmalar</a>
       <a href="#basarilar">Başarılar</a>
@@ -211,6 +257,23 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
     </div>
   </div>
 </nav>
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 
 <div id="top" class="hero">
   <img class="bg" src="assets/hero.jpg" alt="Luminous Robotics Team">
@@ -239,7 +302,7 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
           <div class="stat"><div class="stat-num">36+</div><div class="stat-label">ULUSLARARASI TAKIM BAĞLANTISI</div></div>
         </div>
       </div>
-      <img src="assets/team-group.jpg" alt="Luminous takım fotoğrafı">
+      <img loading="lazy" decoding="async" src="assets/team-group.jpg" alt="Luminous takım fotoğrafı">
     </div>
   </div>
 </section>
@@ -252,14 +315,14 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
     </div>
     <div class="comp-grid">
       <div class="comp-card">
-        <img src="assets/frc.jpg" alt="FRC yarışması">
+        <img loading="lazy" decoding="async" src="assets/frc.jpg" alt="FRC yarışması">
         <div class="comp-body">
           <div class="comp-title">FRC</div>
           <p>FIRST Robotics Competition, lise öğrencilerine gerçek bir mühendislik deneyimi sunarak teorik bilginin pratiğe dönüşmesini sağlar. Öğrenciler robot tasarımı, yazılım ve elektronik gibi alanlarda aktif rol alırken; zaman yönetimi, problem çözme ve üretim kültürünü birebir deneyimler.</p>
         </div>
       </div>
       <div class="comp-card">
-        <img src="assets/vex.jpg" alt="VEX Robotics">
+        <img loading="lazy" decoding="async" src="assets/vex.jpg" alt="VEX Robotics">
         <div class="comp-body">
           <div class="comp-title">VEX Robotics</div>
           <p>40&rsquo;tan fazla ülkeden 18.000 takımın 1350 oyunda yarıştığı, ortaokul ve liselere yönelik dünyanın en büyük robotik etkinliklerinden biridir. Öğrencilerin ekip çalışması, iletişim, proje yönetimi ve eleştirel düşünme becerilerini geliştirmelerine olanak sağlar.</p>
@@ -311,7 +374,7 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
 
     <div class="spotlight">
       <div class="spotlight-card">
-        <img src="assets/team-huddle.jpg" alt="New York'ta Team Spirit Award">
+        <img loading="lazy" decoding="async" src="assets/team-huddle.jpg" alt="New York'ta Team Spirit Award">
         <div class="spotlight-body">
           <div class="tag">Luminous Amerika&rsquo;da &middot; New York</div>
           <h3>Team Spirit Award &mdash; 2024</h3>
@@ -319,7 +382,7 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
         </div>
       </div>
       <div class="spotlight-card">
-        <img src="assets/stadium.jpg" alt="Las Vegas'ta Rising All-Star Award" style="object-position: center 88%;">
+        <img loading="lazy" decoding="async" src="assets/stadium.jpg" alt="Las Vegas'ta Rising All-Star Award" style="object-position: center 88%;">
         <div class="spotlight-body">
           <div class="tag">Luminous Amerika&rsquo;da &middot; Las Vegas</div>
           <h3>Rising All-Star Award &mdash; 2026</h3>
@@ -355,8 +418,8 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
       </div>
     </div>
     <div class="stem-photos">
-      <img src="assets/stem-workshop.jpg" alt="STEM atölyesi" style="object-position: center 15%;">
-      <img src="assets/stem-kids.jpg" alt="STEM kitiyle çalışan öğrenciler" style="object-position: center 15%;">
+      <img loading="lazy" decoding="async" src="assets/stem-workshop.jpg" alt="STEM atölyesi" style="object-position: center 15%;">
+      <img loading="lazy" decoding="async" src="assets/stem-kids.jpg" alt="STEM kitiyle çalışan öğrenciler" style="object-position: center 15%;">
     </div>
   </div>
 </section>
@@ -375,9 +438,9 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
         </div>
       </div>
       <div class="kickoff-photos">
-        <img src="assets/kickoff-group.jpg" alt="Kickoff'ta takım buluşması" style="object-position: center 82%;">
-        <img src="assets/kickoff-workshop.jpg" alt="Kickoff workshop">
-        <img src="assets/kickoff-poster.jpg" alt="Kickoff posteri">
+        <img loading="lazy" decoding="async" src="assets/kickoff-group.jpg" alt="Kickoff'ta takım buluşması" style="object-position: center 82%;">
+        <img loading="lazy" decoding="async" src="assets/kickoff-workshop.jpg" alt="Kickoff workshop">
+        <img loading="lazy" decoding="async" src="assets/kickoff-poster.jpg" alt="Kickoff posteri">
       </div>
     </div>
   </div>
@@ -397,13 +460,13 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
       <div class="stat"><div class="stat-num">3</div><div class="stat-label">BELEDİYEYLE GÖRÜŞME</div></div>
     </div>
     <div class="sponsor-photos">
-      <img src="assets/sponsor-meeting1.jpg" alt="Sponsorluk görüşmesi" style="object-position: center 20%;">
-      <img src="assets/sponsor-meeting2.jpg" alt="Şirket ziyareti">
+      <img loading="lazy" decoding="async" src="assets/sponsor-meeting1.jpg" alt="Sponsorluk görüşmesi" style="object-position: center 20%;">
+      <img loading="lazy" decoding="async" src="assets/sponsor-meeting2.jpg" alt="Şirket ziyareti">
     </div>
     <div class="partner-row">
-      <img src="assets/first-logo.png" alt="FIRST">
-      <img src="assets/fyf-logo.png" alt="Fikret Yüksel Foundation">
-      <img src="assets/logo.png" alt="Luminous Robotics Team">
+      <img loading="lazy" decoding="async" src="assets/first-logo.png" alt="FIRST">
+      <img loading="lazy" decoding="async" src="assets/fyf-logo.png" alt="Fikret Yüksel Foundation">
+      <img loading="lazy" decoding="async" src="assets/logo.png" alt="Luminous Robotics Team">
     </div>
   </div>
 </section>
@@ -422,7 +485,7 @@ footer { border-top: 1px solid var(--border); padding-block: 36px; }
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><img src="assets/logo.png" alt="Luminous"> LUMINOUS ROBOTICS TEAM &middot; 9233</div>
+      <div class="footer-brand"><img loading="lazy" decoding="async" src="assets/logo.png" alt="Luminous"> LUMINOUS ROBOTICS TEAM &middot; 9233</div>
       <div class="footer-links">
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#basarilar">Başarılar</a>
