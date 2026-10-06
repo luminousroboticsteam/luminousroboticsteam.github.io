@@ -88,7 +88,9 @@
         { "day": "10–14", "dow": "Hafta 2", "cat": "yarisma", "milestone": true, "title": "2. Hafta yarışmaları", "desc": "", "time": "" },
         { "day": "14", "dow": "Paz", "cat": "ozel", "title": "Pi Günü", "desc": "Aynı zamanda Einstein'ın doğum günü — matematik/mühendislik temalı post için iyi bir gün.", "time": "" },
         { "day": "17–21", "dow": "Hafta 3", "cat": "yarisma", "milestone": true, "title": "3. Hafta yarışmaları", "desc": "", "time": "" },
-        { "day": "24–28", "dow": "Hafta 4", "cat": "yarisma", "milestone": true, "title": "4. Hafta yarışmaları", "desc": "", "time": "" }
+         { "day": "19–21", "dow": "Mart", "cat": "yarisma", "milestone": true, "title": "FRC Ankara Regional", "desc": "", "time": "" },
+        { "day": "24–28", "dow": "Hafta 4", "cat": "yarisma", "milestone": true, "title": "4. Hafta yarışmaları", "desc": "", "time": "" },
+        { "day": "26–28", "dow": "Mart", "cat": "yarisma", "milestone": true, "title": "FRC İstanbul Regional ve Bosphorus Regional", "desc": "", "time": "" }
       ]
     },
     {
@@ -97,8 +99,10 @@
       "note": "",
       "events": [
         { "day": "31–4", "dow": "Hafta 5", "cat": "yarisma", "milestone": true, "title": "5. Hafta yarışmaları", "desc": "31 Mart – 4 Nisan", "time": "" },
+        { "day": "2–4", "dow": "Nisan", "cat": "yarisma", "milestone": true, "title": "Marmara Regional ve Haliç Regional", "desc": "", "time": "" },
         { "day": "3–11", "dow": "Robotik Haftası", "cat": "ozel", "title": "Ulusal Robotik Haftası", "desc": "6. Hafta yarışmalarıyla çakışıyor — takım tanıtım içerikleri için uygun.", "time": "" },
         { "day": "7–11", "dow": "Hafta 6", "cat": "yarisma", "milestone": true, "title": "6. Hafta yarışmaları", "desc": "", "time": "" },
+        { "day": "9-11", "dow": "Nisan", "cat": "yarisma", "milestone": true, "title": "FRC İzmir Regional", "desc": "", "time": "" },
         { "day": "14–18", "dow": "Hafta 7", "cat": "yarisma", "milestone": true, "title": "7. Hafta yarışmaları", "desc": "", "time": "" },
         { "day": "21", "dow": "Çar", "cat": "kit", "title": "FIRST Choice ve Q&A kapanışı", "desc": "", "time": "12:00" },
         { "day": "23", "dow": "Cum", "cat": "tatil", "title": "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı", "desc": "Resmi tatil.", "time": "" }
