@@ -19,6 +19,7 @@
         { "day": "4–10", "dow": "Uzay Haftası", "cat": "ozel", "title": "Dünya Uzay Haftası", "desc": "Sosyal medya paylaşımı için uygun — Sputnik'in fırlatılışı (4 Ekim) ile Dış Uzay Antlaşması'nın (10 Ekim) yıldönümü arası.", "time": "" },
         { "day": "13", "dow": "Sal", "cat": "ozel", "title": "Ada Lovelace Günü", "desc": "Bilim ve teknolojide kadınları öne çıkaran uluslararası gün — post fikri.", "time": "" },
         { "day": "15", "dow": "Per", "cat": "kayit", "title": "2. etkinlik tercih dönemi başlangıcı", "desc": "", "time": "" },
+        { "day": "16", "dow": "Cum", "cat": "odul", "title": "Boeing Hibesi - Başvuru İçin Son Gün", "desc": "", "time": "" },
         { "day": "22", "dow": "Per", "cat": "kayit", "title": "2. etkinlik tercih dönemi kapanışı", "desc": "", "time": "" },
         { "day": "23", "dow": "Cum", "cat": "kayit", "title": "2. geç kayıt başvuruları açılış", "desc": "", "time": "" },
         { "day": "29", "dow": "Per", "cat": "odul", "title": "Impact, Leadership & Woodie Flowers başvuruları açılış", "desc": "Serbest Bölgesel (Unrestricted Regional) kayıtları da aynı gün açılıyor.", "time": "" },
