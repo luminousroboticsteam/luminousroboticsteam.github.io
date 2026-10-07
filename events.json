@@ -14,6 +14,7 @@
       "name": "Ekim 2026",
       "note": "VEX V5 Override imza etkinlik dönemi (1 Ağustos 2026 – 28 Şubat 2027) devam ediyor.",
       "events": [
+        [{ "day": "1", "dow": "Per", "cat": "hibe", "title": "FIRST FRC Team Support Grant başvuruları açılıyor", "desc": "2026-2027 FRC sezonu için ihtiyaç bazlı takım destek hibesi.", "time": "" }
         { "day": "1", "dow": "Per", "cat": "kayit", "title": "1. etkinlik tercih dönemi kapanışı", "desc": "", "time": "" },
         { "day": "2", "dow": "Cum", "cat": "kayit", "title": "Geç kayıt başvuruları açılış", "desc": "", "time": "" },
         { "day": "4–10", "dow": "Uzay Haftası", "cat": "ozel", "title": "Dünya Uzay Haftası", "desc": "Sosyal medya paylaşımı için uygun — Sputnik'in fırlatılışı (4 Ekim) ile Dış Uzay Antlaşması'nın (10 Ekim) yıldönümü arası.", "time": "" },
