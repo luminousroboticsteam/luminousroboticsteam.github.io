@@ -15,6 +15,7 @@
       "note": "VEX V5 Override imza etkinlik dönemi (1 Ağustos 2026 – 28 Şubat 2027) devam ediyor.",
       "events": [
         { "day": "1", "dow": "Per", "cat": "kayit", "title": "1. etkinlik tercih dönemi kapanışı", "desc": "", "time": "" },
+        { "day": "1", "dow": "Per", "cat": "odul", "title": "FIRST FRC Team Support Grant başvuruları açılıyor", "desc": "2026-2027 FRC sezonu için ihtiyaç bazlı takım destek hibesi.", "time": "" },
         { "day": "2", "dow": "Cum", "cat": "kayit", "title": "Geç kayıt başvuruları açılış", "desc": "", "time": "" },
         { "day": "4–10", "dow": "Uzay Haftası", "cat": "ozel", "title": "Dünya Uzay Haftası", "desc": "Sosyal medya paylaşımı için uygun — Sputnik'in fırlatılışı (4 Ekim) ile Dış Uzay Antlaşması'nın (10 Ekim) yıldönümü arası.", "time": "" },
         { "day": "13", "dow": "Sal", "cat": "ozel", "title": "Ada Lovelace Günü", "desc": "Bilim ve teknolojide kadınları öne çıkaran uluslararası gün — post fikri.", "time": "" },
@@ -22,6 +23,7 @@
         { "day": "16", "dow": "Cum", "cat": "odul", "title": "Boeing Hibesi - Başvuru İçin Son Gün", "desc": "", "time": "" },
         { "day": "22", "dow": "Per", "cat": "kayit", "title": "2. etkinlik tercih dönemi kapanışı", "desc": "", "time": "" },
         { "day": "23", "dow": "Cum", "cat": "kayit", "title": "2. geç kayıt başvuruları açılış", "desc": "", "time": "" },
+        { "day": "25", "dow": "Paz", "cat": "odul", "title": "FIRST FRC Team Support Grant | Son Başvuru", "desc": "2026-2027 FRC sezonu için takım destek hibesi başvurularının son günü.", "time": "" },
         { "day": "29", "dow": "Per", "cat": "odul", "title": "Impact, Leadership & Woodie Flowers başvuruları açılış", "desc": "Serbest Bölgesel (Unrestricted Regional) kayıtları da aynı gün açılıyor.", "time": "" },
         { "day": "1–4", "dow": "Alan Ziyareti", "cat": "gorev", "title": "Kickoff etkinlik alanı ziyaretleri (27 Eylül'den beri devam ediyor)", "desc": "İstanbul dışı etkinlik alanları (bizimki dahil) online, İstanbul içi alanlar fiziksel olarak FYF tarafından ziyaret ediliyor.", "time": "" },
         { "day": "9", "dow": "Cum", "cat": "gorev", "title": "Genel Kontrol Toplantısı ve Sözleşme Teslimi son tarihi", "desc": "2027 Antalya Kickoff organizasyon sözleşmesinin teslimi ve genel kontrol toplantısı.", "time": "19:30" },
