@@ -6,6 +6,7 @@
       "name": "Eylül 2026",
       "note": "",
       "events": [
+        { "day": "17", "dow": "Per", "cat": "ödül", "title": "3M Grant | Başlangıç", "desc": "2026-2027 FRC ve FTC takım hibesi başvuru dönemi başlıyor.", "time": "" },
         { "day": "24", "dow": "Per", "cat": "kayit", "title": "Kit & Kickoff kayıt başlangıcı", "desc": "1. etkinlik tercih dönemi de aynı gün açılıyor.", "time": "" }
       ]
     },
@@ -21,6 +22,7 @@
         { "day": "13", "dow": "Sal", "cat": "ozel", "title": "Ada Lovelace Günü", "desc": "Bilim ve teknolojide kadınları öne çıkaran uluslararası gün — post fikri.", "time": "" },
         { "day": "15", "dow": "Per", "cat": "kayit", "title": "2. etkinlik tercih dönemi başlangıcı", "desc": "", "time": "" },
         { "day": "16", "dow": "Cum", "cat": "odul", "title": "Boeing Hibesi - Başvuru İçin Son Gün", "desc": "", "time": "" },
+        { "day": "17", "dow": "Cmt", "cat": "ödül", "title": "3M Grant | Son Başvuru", "desc": "2026-2027 FRC ve FTC takım hibesi başvurularının son günü.", "time": "" },
         { "day": "22", "dow": "Per", "cat": "kayit", "title": "2. etkinlik tercih dönemi kapanışı", "desc": "", "time": "" },
         { "day": "23", "dow": "Cum", "cat": "kayit", "title": "2. geç kayıt başvuruları açılış", "desc": "", "time": "" },
         { "day": "25", "dow": "Paz", "cat": "odul", "title": "FIRST FRC Team Support Grant | Son Başvuru", "desc": "2026-2027 FRC sezonu için takım destek hibesi başvurularının son günü.", "time": "" },
